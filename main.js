@@ -21,7 +21,10 @@ async function getMovies(url) {
   const res = await fetch(url);
   showLoader();
   const data = await res.json();
-  hideLoader();
+  setTimeout(() => {
+    hideLoader();
+  },2000);
+  
   showMovies(data.results);
 }
 
